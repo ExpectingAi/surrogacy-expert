@@ -1,4 +1,4 @@
-// Surrogacy Expert — Main JS
+// Intended Parents Expert — Main JS
 
 document.addEventListener('DOMContentLoaded', function () {
 
