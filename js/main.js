@@ -198,10 +198,68 @@ function renderFooter() {
   document.querySelectorAll('.footer-bottom').forEach(el => { el.innerHTML = footerBottomHtml; });
 }
 
+// ─── Auto-generate BreadcrumbList + Article JSON-LD schema ───────────────────
+function injectStructuredData() {
+  // BreadcrumbList from .breadcrumb DOM elements
+  const breadcrumbEl = document.querySelector('.breadcrumb');
+  if (breadcrumbEl) {
+    const anchors = Array.from(breadcrumbEl.querySelectorAll('a'));
+    const currentSpan = breadcrumbEl.querySelector('span:last-child');
+    const items = anchors.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: a.textContent.trim(),
+      item: a.href
+    }));
+    if (currentSpan && currentSpan.textContent.trim() && currentSpan.textContent.trim() !== '›') {
+      items.push({
+        '@type': 'ListItem',
+        position: items.length + 1,
+        name: currentSpan.textContent.trim(),
+        item: window.location.href.split('?')[0].replace(/\/$/, '') + '/'
+      });
+    }
+    if (items.length > 1) {
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items });
+      document.head.appendChild(ld);
+    }
+  }
+
+  // Article schema for inner content pages
+  const h1 = document.querySelector('h1');
+  const desc = document.querySelector('meta[name="description"]');
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const isContentPage = document.querySelector('.article-body') || document.querySelector('.prose-section');
+  const isHomepage = window.location.pathname === '/' || window.location.pathname.match(/^\/index\.html$/);
+  if (h1 && isContentPage && !isHomepage && canonical) {
+    const articleLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: h1.textContent.trim(),
+      description: desc ? desc.getAttribute('content') : '',
+      url: canonical.getAttribute('href'),
+      publisher: {
+        '@type': 'Organization',
+        name: 'Surrogacy.expert',
+        url: 'https://surrogacy.expert'
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical.getAttribute('href') }
+    };
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify(articleLd);
+    document.head.appendChild(ld);
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 injectMobileOverflowFixes();
 renderDesktopNav();
 renderMobileNav();
 renderFooter();
+injectStructuredData();
 window.addEventListener('resize', applyFooterResponsiveLayout);
 window.addEventListener('orientationchange', () => setTimeout(applyFooterResponsiveLayout, 100));
 
