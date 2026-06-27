@@ -117,7 +117,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: end;       /* text aligns to bottom, image bleeds */
+  align-items: end;
 }
 .hero-text { padding-bottom: 5rem; }
 .hero-eyebrow {
@@ -144,7 +144,7 @@ body {
   align-self: end;
 }
 .hero-image-wrap {
-  border-radius: 2rem 2rem 0 0;   /* flat bottom — sits on the trust-bar edge */
+  border-radius: 2rem 2rem 0 0;
   overflow: hidden;
   aspect-ratio: 4/5;
   background: var(--blush);
@@ -165,7 +165,6 @@ body {
   color: var(--pink); font-variation-settings: 'opsz' 28; line-height: 1;
 }
 .hero-stat-l { font-size: 0.78rem; color: var(--text-soft); margin-top: 3px; line-height: 1.4; }
-/* alias */
 .hero-stat-num { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--pink); line-height: 1; }
 .hero-stat-label { font-size: 0.78rem; color: var(--text-soft); margin-top: 3px; }
 
@@ -181,10 +180,7 @@ body {
 .btn-primary:hover { background: var(--rose-dark); border-color: var(--rose-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(91,126,158,0.3); }
 .btn-secondary { background: transparent; color: var(--pink); border-color: var(--pink); }
 .btn-secondary:hover { background: var(--blush); transform: translateY(-2px); }
-.btn-ghost {
-  background: transparent; border-color: transparent;
-  color: var(--rose); padding-left: 0; padding-right: 0;
-}
+.btn-ghost { background: transparent; border-color: transparent; color: var(--rose); padding-left: 0; padding-right: 0; }
 .btn-ghost:hover { color: var(--rose-dark); }
 
 /* ─── TRUST BAR ───────────────────────────────────────── */
@@ -309,12 +305,12 @@ aside { min-width: 0; }
 .pullquote { border-left: 3px solid var(--blush); padding: 1rem 1.4rem; margin: 2rem 0; background: var(--blush); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
 .pullquote p { font-family: var(--ff-display); font-size: 1.05rem; font-style: italic; color: var(--pink); margin: 0; line-height: 1.55; }
 
-/* State cards (legacy — kept for state pages that use .state-card/.state-name) */
+/* State cards */
 .state-card { border: 1.5px solid var(--sand); border-radius: 10px; padding: 0.55rem 0.8rem; display: flex; flex-direction: column; text-decoration: none; transition: background 0.15s, transform 0.15s; }
 .state-card:hover { background: var(--blush) !important; border-color: var(--pink) !important; transform: translateY(-2px); }
 .state-name { font-size: 0.85rem; font-weight: 600; color: var(--pink); }
 
-/* Glance row (state pages) */
+/* Glance row */
 .glance-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.75rem; margin: 1.5rem 0; }
 .glance-box { background: var(--blush-pale); border: 1px solid var(--sand); border-radius: var(--radius-lg); padding: 0.85rem 0.6rem; text-align: center; }
 .glance-val { font-family: var(--ff-display); font-size: 1rem; font-weight: 600; color: var(--pink); display: block; line-height: 1; }
@@ -327,7 +323,7 @@ aside { min-width: 0; }
 .cost-table tr:nth-child(even) td { background: var(--cream-warm); }
 .cost-table .total-row td { font-weight: 700; color: var(--pink); background: var(--blush-pale); }
 
-/* Prose (standalone) */
+/* Prose */
 .prose h2 { font-family: var(--ff-display); font-size: 1.65rem; font-weight: 400; color: var(--pink); margin: 2.25rem 0 0.85rem; }
 .prose h3 { font-family: var(--ff-display); font-size: 1.15rem; font-weight: 500; color: var(--pink); margin: 1.5rem 0 0.4rem; }
 .prose p { color: var(--text-mid); margin-bottom: 1.2rem; }
@@ -354,7 +350,6 @@ aside { min-width: 0; }
 }
 
 @media (max-width: 900px) {
-  /* Hero: stack text above image */
   .hero {
     grid-template-columns: 1fr;
     padding: 3rem 1.5rem 0;
@@ -362,9 +357,13 @@ aside { min-width: 0; }
     align-items: start;
   }
   .hero-text { padding-bottom: 0; }
-  .hero-visual { max-width: 100%; }
+  .hero-visual {
+    max-width: 100%;
+    /* ── FIX: gap between image and trust bar on mobile ── */
+    margin-bottom: 2rem;
+  }
   .hero-image-wrap {
-    border-radius: 1.5rem;  /* all corners rounded when stacked */
+    border-radius: 1.5rem;
     aspect-ratio: 16/9;
   }
   .hero-stat-card { bottom: 0.9rem; left: 0.9rem; padding: 0.65rem 1rem; min-width: 130px; }
@@ -384,10 +383,9 @@ aside { min-width: 0; }
   .hero                 { padding: 2.5rem 1.25rem 0; gap: 1.5rem; }
   .mini-steps-card      { padding: 1.5rem; }
 
-  .hero h1   { font-size: 2.1rem; }
-  .hero-sub  { font-size: 0.95rem; }
+  .hero h1  { font-size: 2.1rem; }
+  .hero-sub { font-size: 0.95rem; }
 
-  /* ── Fix: stacked hero action buttons ── */
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
