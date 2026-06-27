@@ -10,143 +10,382 @@
 <meta property="og:title" content="Surrogacy Laws by State | Surrogacy.expert">
 <meta property="og:url" content="https://surrogacy.expert/surrogacy-by-state/">
 <meta property="og:image" content="https://surrogacy.expert/og-image.png">
-<meta name="geo.region" content="US">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.state-rating-section{margin:2.5rem 0;}
-.state-rating-section h2{margin-bottom:1.25rem;}
-.state-list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.6rem;}
-.state-list-item{display:flex;align-items:center;gap:0.5rem;padding:0.55rem 0.75rem;background:var(--cream-warm);border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;color:var(--text);transition:background 0.15s;}
-.state-list-item:hover{background:var(--blush);}
-.state-list-item .si{font-size:0.8rem;}
-.friendly .state-list-item{background:var(--blush-pale);}
-.friendly .state-list-item:hover{background:var(--blush);}
-.complex-list .state-list-item{background:#fff5f5;}
-.complex-list .state-list-item:hover{background:#ffe8e8;}
-.restricted-list .state-list-item{background:#fff0f0;}
-.understand-box{background:var(--blush-pale);border-radius:12px;padding:1.5rem;margin:2.5rem 0;}
-.understand-box h3{margin-bottom:0.75rem;color:var(--text);}
-.understand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem;}
-.understand-item{background:white;border-radius:8px;padding:0.9rem 1rem;}
-.understand-item strong{display:block;font-size:0.85rem;color:var(--text);margin-bottom:0.25rem;}
-.understand-item span{font-size:0.78rem;color:var(--text-mid);line-height:1.5;}
+/* ── State index page styles ── */
+.state-hero {
+  background: var(--cream-warm);
+  padding: 3rem 1.5rem 0;
+  border-bottom: 1px solid var(--sand);
+}
+.state-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  padding-bottom: 0;
+}
+.state-hero-text { padding-bottom: 3rem; }
+.state-hero-visual {
+  position: relative;
+  align-self: end;
+}
+.state-hero-image-wrap {
+  border-radius: 2rem 2rem 0 0;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--blush);
+}
+.state-hero-image-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.state-hero-stat {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 4px 24px rgba(61,53,104,0.14);
+  min-width: 150px;
+}
+.state-hero-stat-n {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--pink);
+  line-height: 1;
+}
+.state-hero-stat-l {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+/* ── Search bar ── */
+.state-search-wrap {
+  margin: 2rem 0 1rem;
+}
+.state-search {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.75rem 1.1rem;
+  border: 1.5px solid var(--sand);
+  border-radius: 100px;
+  font-family: var(--ff-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: white;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.state-search:focus { border-color: var(--pink); }
+
+/* ── Rating sections ── */
+.rating-section { margin-bottom: 3rem; }
+.rating-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--sand);
+}
+.rating-section-header h2 {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+.rating-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+}
+.badge-friendly { background: #e8f5e9; color: #2e7d32; }
+.badge-moderate { background: #fff8e1; color: #f57f17; }
+.badge-complex  { background: #fce4ec; color: #c62828; }
+.badge-restricted { background: #f3e5f5; color: #6a1b9a; }
+.rating-desc {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* ── State grid ── */
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 0.65rem;
+}
+.state-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 1.5px solid var(--sand);
+  background: white;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  min-height: 44px;
+}
+.state-pill:hover { background: var(--blush); border-color: var(--pink); transform: translateY(-2px); }
+.state-pill .sp-icon { font-size: 0.85rem; }
+.state-pill .sp-name { color: var(--pink); }
+
+/* Friendly tint */
+.state-pill.friendly { background: var(--blush-pale); }
+.state-pill.friendly:hover { background: var(--blush); }
+/* Complex tint */
+.state-pill.complex { background: #fff5f5; }
+.state-pill.complex:hover { background: #ffe8e8; border-color: #f0c0c0; }
+/* Restricted */
+.state-pill.restricted { background: #f8f0ff; }
+.state-pill.restricted:hover { background: #ede0ff; border-color: #c89ee0; }
+
+/* ── Explainer box ── */
+.rating-explainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background: var(--blush-pale);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+.rating-explainer-item {}
+.rating-explainer-item strong { display: block; font-size: 0.88rem; color: var(--text); margin-bottom: 0.25rem; }
+.rating-explainer-item span { font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; }
+
+/* ── Bottom CTA ── */
+.state-cta-bar {
+  background: var(--pink);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.state-cta-bar h3 { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 400; color: white; margin: 0 0 0.25rem; }
+.state-cta-bar p  { color: var(--blush); font-size: 0.88rem; margin: 0; }
+.state-cta-bar .btn-primary { background: white; color: var(--pink); border-color: white; white-space: nowrap; }
+.state-cta-bar .btn-primary:hover { background: var(--blush); border-color: var(--blush); }
+
+@media (max-width: 900px) {
+  .state-hero-inner { grid-template-columns: 1fr; }
+  .state-hero-visual { display: none; }
+  .state-hero-text { padding-bottom: 2rem; }
+}
+@media (max-width: 640px) {
+  .state-hero { padding: 2rem 1.25rem 0; }
+  .states-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; }
+  .state-cta-bar { flex-direction: column; align-items: flex-start; }
+  .rating-explainer { grid-template-columns: 1fr 1fr; }
+}
 </style>
-</head><body>
-<nav class="site-nav" aria-label="Main navigation"><div class="nav-inner"><a href="../" class="nav-logo">Surrogacy<span>Expert</span></a><ul class="nav-links" role="list"></ul><a href="../get-started/" class="nav-cta">Start Your Journey</a><button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
-<div class="nav-mobile" id="nav-mobile" role="navigation" aria-hidden="true"></div>
-<div class="page-hero"><div class="page-hero-grid"><div class="page-hero-inner">
-<div class="breadcrumb"><a href="../">Home</a> <span>›</span> <span>Surrogacy by State</span></div>
-<p class="section-label">Legal Guides</p>
-<h1>Surrogacy Laws by State: All 50 States + DC</h1>
-<p class="lead">Where your surrogate delivers determines your legal protections — which parentage order you can get, how fast, and whether LGBTQ+ families have explicit statutory protection. Use this guide to understand your state before choosing a surrogate.</p>
-</div></div></div>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo">Surrogacy<span>Expert</span></a>
+    <ul class="nav-links" role="list"></ul>
+    <a href="../get-started/" class="nav-cta">Start Your Journey</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="6" x2="20" y2="6"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="16" x2="20" y2="16"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true"></div>
 
-<section class="prose-section"><div class="container">
-
-<div class="understand-box">
-<h3>Why the delivery state matters</h3>
-<p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:0;">Surrogacy law is state law — not federal. The state where your surrogate delivers determines: (1) whether a pre-birth order is available, (2) how quickly your names appear on the birth certificate, and (3) whether same-sex couples and single parents have explicit statutory protection. In some cases, choosing a delivery hospital just across a state line can dramatically improve your legal position. See our <a href="../your-journey/legal-process/">legal process guide</a> for how parentage orders work.</p>
-<div class="understand-grid">
-  <div class="understand-item"><strong>✅ Surrogacy-Friendly</strong><span>Comprehensive statute or strong case law. PBOs routine for all family types. Best legal certainty.</span></div>
-  <div class="understand-item"><strong>⚠️ Moderate</strong><span>Case law governs. PBOs available in major metro courts. County selection matters. Workable with right attorney.</span></div>
-  <div class="understand-item"><strong>⚡ Complex</strong><span>Hostile statute or near-zero court experience. Cross-border delivery strongly recommended.</span></div>
-  <div class="understand-item"><strong>🚫 Restricted</strong><span>Commercial surrogacy prohibited or void by statute. Do not attempt surrogacy delivery here.</span></div>
-</div>
-</div>
-
-<div class="state-rating-section friendly">
-<h2>✅ Surrogacy-Friendly States</h2>
-<p style="color:var(--text-mid);font-size:0.88rem;margin-bottom:1.25rem;">These states have comprehensive surrogacy statutes or strong, predictable case law. Pre-birth orders are routine for all intended parent configurations including LGBTQ+ families and single parents.</p>
-<div class="state-list-grid">
-  <a href="california/" class="state-list-item"><span class="si">★</span> California</a>
-  <a href="nevada/" class="state-list-item"><span class="si">★</span> Nevada</a>
-  <a href="washington/" class="state-list-item">Washington</a>
-  <a href="oregon/" class="state-list-item">Oregon</a>
-  <a href="colorado/" class="state-list-item">Colorado</a>
-  <a href="illinois/" class="state-list-item"><span class="si">★</span> Illinois</a>
-  <a href="new-york/" class="state-list-item"><span class="si">★</span> New York</a>
-  <a href="new-jersey/" class="state-list-item">New Jersey</a>
-  <a href="connecticut/" class="state-list-item">Connecticut</a>
-  <a href="maine/" class="state-list-item">Maine</a>
-  <a href="new-hampshire/" class="state-list-item">New Hampshire</a>
-  <a href="rhode-island/" class="state-list-item">Rhode Island</a>
-  <a href="vermont/" class="state-list-item">Vermont</a>
-  <a href="delaware/" class="state-list-item">Delaware</a>
-  <a href="maryland/" class="state-list-item">Maryland</a>
-  <a href="virginia/" class="state-list-item">Virginia</a>
-  <a href="new-mexico/" class="state-list-item">New Mexico</a>
-  <a href="hawaii/" class="state-list-item">Hawaii</a>
-  <a href="massachusetts/" class="state-list-item">Massachusetts</a>
-  <a href="washington-dc/" class="state-list-item">Washington DC</a>
-</div>
+<!-- ── PAGE HERO ── -->
+<div class="state-hero">
+  <div class="state-hero-inner">
+    <div class="state-hero-text">
+      <div class="breadcrumb" style="font-size:0.78rem;color:var(--text-soft);margin-bottom:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;"><a href="../" style="color:var(--text-soft);">Home</a> <span>›</span> <span>Surrogacy by State</span></div>
+      <p class="section-label">Legal Guides</p>
+      <h1 style="font-family:var(--ff-display);font-size:clamp(1.9rem,4vw,3rem);font-weight:300;line-height:1.15;color:var(--pink);letter-spacing:-0.02em;margin-bottom:0.85rem;">Surrogacy Laws<br>by State</h1>
+      <p style="font-size:1rem;color:var(--text-mid);line-height:1.7;max-width:520px;">Where your surrogate delivers determines your legal protections. Find your state, understand your options, and make the right choice for your family.</p>
+      <div class="state-search-wrap">
+        <input type="search" id="stateSearch" class="state-search" placeholder="Search a state…" aria-label="Search states">
+      </div>
+    </div>
+    <div class="state-hero-visual" aria-hidden="true">
+      <div class="state-hero-image-wrap">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?fm=jpg&q=80&w=700&auto=format&fit=crop" alt="Legal documents">
+      </div>
+      <div class="state-hero-stat">
+        <div class="state-hero-stat-n">51</div>
+        <div class="state-hero-stat-l">Jurisdictions covered — all 50 states + DC</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="state-rating-section">
-<h2>⚠️ Moderate States</h2>
-<p style="color:var(--text-mid);font-size:0.88rem;margin-bottom:1.25rem;">Case law governs in these states. Pre-birth orders are available in major metro courts but county selection matters. Intended parents should retain experienced local counsel before finalizing a match.</p>
-<div class="state-list-grid">
-  <a href="texas/" class="state-list-item">Texas</a>
-  <a href="florida/" class="state-list-item">Florida</a>
-  <a href="georgia/" class="state-list-item">Georgia</a>
-  <a href="ohio/" class="state-list-item">Ohio</a>
-  <a href="pennsylvania/" class="state-list-item">Pennsylvania</a>
-  <a href="minnesota/" class="state-list-item">Minnesota</a>
-  <a href="arizona/" class="state-list-item">Arizona</a>
-  <a href="north-carolina/" class="state-list-item">North Carolina</a>
-  <a href="indiana/" class="state-list-item">Indiana</a>
-  <a href="missouri/" class="state-list-item">Missouri</a>
-  <a href="tennessee/" class="state-list-item">Tennessee</a>
-  <a href="utah/" class="state-list-item">Utah</a>
-  <a href="kentucky/" class="state-list-item">Kentucky</a>
-  <a href="iowa/" class="state-list-item">Iowa</a>
-  <a href="kansas/" class="state-list-item">Kansas</a>
-  <a href="nebraska/" class="state-list-item">Nebraska</a>
-  <a href="oklahoma/" class="state-list-item">Oklahoma</a>
-  <a href="arkansas/" class="state-list-item">Arkansas</a>
-  <a href="alabama/" class="state-list-item">Alabama</a>
-  <a href="idaho/" class="state-list-item">Idaho</a>
-  <a href="montana/" class="state-list-item">Montana</a>
-  <a href="wyoming/" class="state-list-item">Wyoming</a>
-  <a href="alaska/" class="state-list-item">Alaska</a>
-  <a href="west-virginia/" class="state-list-item">West Virginia</a>
-</div>
-</div>
+<!-- ── CONTENT ── -->
+<section class="section section-white" style="padding-top:2.5rem;">
+  <div class="container">
 
-<div class="state-rating-section complex-list">
-<h2>⚡ Complex States</h2>
-<p style="color:var(--text-mid);font-size:0.88rem;margin-bottom:1.25rem;">These states have hostile statutes or near-zero court experience with surrogacy. Cross-border delivery to a neighboring friendly or moderate state is strongly recommended.</p>
-<div class="state-list-grid">
-  <a href="michigan/" class="state-list-item">Michigan</a>
-  <a href="wisconsin/" class="state-list-item">Wisconsin</a>
-  <a href="north-dakota/" class="state-list-item">North Dakota</a>
-  <a href="south-dakota/" class="state-list-item">South Dakota</a>
-  <a href="south-carolina/" class="state-list-item">South Carolina</a>
-  <a href="mississippi/" class="state-list-item">Mississippi</a>
-</div>
-</div>
+    <!-- Why delivery state matters -->
+    <div class="rating-explainer">
+      <div class="rating-explainer-item"><strong>✅ Surrogacy-Friendly</strong><span>Comprehensive statute or strong case law. PBOs routine for all family types including LGBTQ+.</span></div>
+      <div class="rating-explainer-item"><strong>⚠️ Moderate</strong><span>Case law governs. PBOs available in major metro courts. County selection matters. Workable with right attorney.</span></div>
+      <div class="rating-explainer-item"><strong>⚡ Complex</strong><span>Hostile statute or near-zero court experience. Cross-border delivery strongly recommended.</span></div>
+      <div class="rating-explainer-item"><strong>🚫 Restricted</strong><span>Commercial surrogacy void or prohibited by statute. Do not deliver here.</span></div>
+    </div>
 
-<div class="state-rating-section restricted-list">
-<h2>🚫 Restricted States</h2>
-<p style="color:var(--text-mid);font-size:0.88rem;margin-bottom:1.25rem;">Commercial surrogacy contracts are prohibited or void by statute. Do not attempt surrogacy delivery in these states.</p>
-<div class="state-list-grid">
-  <a href="louisiana/" class="state-list-item">Louisiana</a>
-</div>
-</div>
+    <!-- FRIENDLY -->
+    <div class="rating-section" id="friendly">
+      <div class="rating-section-header">
+        <span class="rating-badge badge-friendly">Surrogacy-Friendly</span>
+        <h2>Best states for intended parents</h2>
+      </div>
+      <p class="rating-desc">These states have comprehensive surrogacy statutes or strong, predictable case law. Pre-birth orders are routine for all intended parent configurations — married couples, same-sex couples, single parents, and international families.</p>
+      <div class="states-grid" id="grid-friendly">
+        <a href="california/" class="state-pill friendly"><span class="sp-icon">⭐</span><span class="sp-name">California</span></a>
+        <a href="nevada/" class="state-pill friendly"><span class="sp-icon">⭐</span><span class="sp-name">Nevada</span></a>
+        <a href="illinois/" class="state-pill friendly"><span class="sp-icon">⭐</span><span class="sp-name">Illinois</span></a>
+        <a href="new-york/" class="state-pill friendly"><span class="sp-icon">⭐</span><span class="sp-name">New York</span></a>
+        <a href="washington/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Washington</span></a>
+        <a href="oregon/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Oregon</span></a>
+        <a href="colorado/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Colorado</span></a>
+        <a href="new-jersey/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">New Jersey</span></a>
+        <a href="connecticut/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Connecticut</span></a>
+        <a href="maine/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Maine</span></a>
+        <a href="new-hampshire/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">New Hampshire</span></a>
+        <a href="rhode-island/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Rhode Island</span></a>
+        <a href="vermont/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Vermont</span></a>
+        <a href="delaware/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Delaware</span></a>
+        <a href="maryland/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Maryland</span></a>
+        <a href="virginia/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Virginia</span></a>
+        <a href="new-mexico/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">New Mexico</span></a>
+        <a href="hawaii/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Hawaii</span></a>
+        <a href="massachusetts/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Massachusetts</span></a>
+        <a href="washington-dc/" class="state-pill friendly"><span class="sp-icon">✅</span><span class="sp-name">Washington DC</span></a>
+      </div>
+    </div>
 
-<div style="margin:3rem 0 1rem;padding:1.5rem;background:var(--blush-pale);border-radius:12px;">
-<h3 style="margin-bottom:0.75rem;">Not sure where to start?</h3>
-<p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:1.25rem;">The delivery state is one of many decisions in your journey. Read our <a href="../your-journey/legal-process/">legal process guide</a> to understand how pre-birth orders work, review the <a href="../learn/surrogacy-cost/">full cost breakdown</a>, and <a href="../get-started/">connect with a specialist</a> who can advise on your specific situation.</p>
-<div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
-  <a href="../your-journey/legal-process/" class="btn btn-primary" style="font-size:0.85rem;">How Legal Process Works</a>
-  <a href="../learn/surrogacy-cost/" class="btn btn-secondary" style="font-size:0.85rem;">Cost Breakdown</a>
-  <a href="../your-family/lgbtq-surrogacy/" class="btn btn-secondary" style="font-size:0.85rem;">LGBTQ+ Guide</a>
-</div>
-</div>
+    <!-- MODERATE -->
+    <div class="rating-section" id="moderate">
+      <div class="rating-section-header">
+        <span class="rating-badge badge-moderate">Moderate</span>
+        <h2>Workable with the right attorney</h2>
+      </div>
+      <p class="rating-desc">Case law governs in these states. Pre-birth orders are available in major metro courts but county selection matters. Retain experienced local counsel before finalizing your surrogate match.</p>
+      <div class="states-grid" id="grid-moderate">
+        <a href="texas/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Texas</span></a>
+        <a href="florida/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Florida</span></a>
+        <a href="georgia/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Georgia</span></a>
+        <a href="ohio/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Ohio</span></a>
+        <a href="pennsylvania/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Pennsylvania</span></a>
+        <a href="minnesota/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Minnesota</span></a>
+        <a href="arizona/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Arizona</span></a>
+        <a href="north-carolina/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">North Carolina</span></a>
+        <a href="indiana/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Indiana</span></a>
+        <a href="missouri/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Missouri</span></a>
+        <a href="tennessee/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Tennessee</span></a>
+        <a href="utah/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Utah</span></a>
+        <a href="kentucky/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Kentucky</span></a>
+        <a href="iowa/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Iowa</span></a>
+        <a href="kansas/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Kansas</span></a>
+        <a href="nebraska/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Nebraska</span></a>
+        <a href="oklahoma/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Oklahoma</span></a>
+        <a href="arkansas/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Arkansas</span></a>
+        <a href="alabama/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Alabama</span></a>
+        <a href="idaho/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Idaho</span></a>
+        <a href="montana/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Montana</span></a>
+        <a href="wyoming/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Wyoming</span></a>
+        <a href="alaska/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">Alaska</span></a>
+        <a href="west-virginia/" class="state-pill"><span class="sp-icon">⚠️</span><span class="sp-name">West Virginia</span></a>
+      </div>
+    </div>
 
-</div></section>
+    <!-- COMPLEX -->
+    <div class="rating-section" id="complex">
+      <div class="rating-section-header">
+        <span class="rating-badge badge-complex">Complex</span>
+        <h2>Cross-border delivery recommended</h2>
+      </div>
+      <p class="rating-desc">These states have hostile statutes or near-zero court experience with surrogacy. Surrogates here commonly deliver in a neighboring friendly or moderate state. Retain attorneys in both states from the start.</p>
+      <div class="states-grid" id="grid-complex">
+        <a href="michigan/" class="state-pill complex"><span class="sp-icon">⚡</span><span class="sp-name">Michigan</span></a>
+        <a href="wisconsin/" class="state-pill complex"><span class="sp-icon">⚡</span><span class="sp-name">Wisconsin</span></a>
+        <a href="north-dakota/" class="state-pill complex"><span class="sp-icon">⚡</span><span class="sp-name">North Dakota</span></a>
+        <a href="south-dakota/" class="state-pill complex"><span class="sp-icon">⚡</span><span class="sp-name">South Dakota</span></a>
+        <a href="south-carolina/" class="state-pill complex"><span class="sp-icon">⚡</span><span class="sp-name">South Carolina</span></a>
+        <a href="mississippi/" class="state-pill complex"><span class="sp-icon">⚡</span><span class="sp-name">Mississippi</span></a>
+      </div>
+    </div>
 
-<footer class="site-footer"><div class="footer-inner"><div class="footer-top"></div><div class="footer-bottom"></div></div></footer>
+    <!-- RESTRICTED -->
+    <div class="rating-section" id="restricted">
+      <div class="rating-section-header">
+        <span class="rating-badge badge-restricted">Restricted</span>
+        <h2>Do not deliver here</h2>
+      </div>
+      <p class="rating-desc">Commercial surrogacy contracts are prohibited or void by statute. Do not attempt a compensated surrogacy delivery in this state.</p>
+      <div class="states-grid" id="grid-restricted">
+        <a href="louisiana/" class="state-pill restricted"><span class="sp-icon">🚫</span><span class="sp-name">Louisiana</span></a>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="state-cta-bar">
+      <div>
+        <h3>Not sure where to start?</h3>
+        <p>Our legal process guide explains how pre-birth orders work and what to look for in a delivery state.</p>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a href="../your-journey/legal-process/" class="btn btn-primary">How Legal Process Works</a>
+        <a href="../learn/surrogacy-cost/" class="btn btn-secondary" style="color:white;border-color:rgba(255,255,255,0.4);">Cost Breakdown</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-inner">
+    <div class="footer-top"></div>
+    <div class="footer-bottom"></div>
+  </div>
+</footer>
+
 <script src="../js/main.js"></script>
-</body></html>
+<script>
+// State search — filters across all four grids
+const searchInput = document.getElementById('stateSearch');
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+    document.querySelectorAll('.state-pill').forEach(pill => {
+      const name = pill.querySelector('.sp-name');
+      if (!name) return;
+      pill.style.display = (!q || name.textContent.toLowerCase().includes(q)) ? '' : 'none';
+    });
+    // Show/hide section headers when all pills in that grid are hidden
+    document.querySelectorAll('.rating-section').forEach(section => {
+      const visible = Array.from(section.querySelectorAll('.state-pill')).some(p => p.style.display !== 'none');
+      section.style.display = visible ? '' : 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>
