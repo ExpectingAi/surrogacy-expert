@@ -1,5 +1,4 @@
 // surrogacy.expert — canonical navigation injector
-// Mirrors the surrogate.expert component architecture exactly
 
 const navItems = [
   {
@@ -53,6 +52,7 @@ const navItems = [
 
 const siteItems = [
   ['about/', 'About'],
+  ['blog/', 'Blog'],
   ['get-started/', 'Get Started'],
 ];
 
@@ -113,7 +113,7 @@ function renderDesktopNav() {
         ${group.items.map(([path, label]) => `<a href="${hrefFor(path)}" role="menuitem"${isActive(path) ? ' class="active"' : ''}>${label}</a>`).join('')}
       </div>
     </li>
-  `).join('') + `<li><a href="${hrefFor('about/')}"${isActive('about/') ? ' class="active"' : ''}>About</a></li>`;
+  `).join('') + `<li><a href="${hrefFor('blog/')}"${isActive('blog/') ? ' class="active"' : ''}>Blog</a></li><li><a href="${hrefFor('about/')}"${isActive('about/') ? ' class="active"' : ''}>About</a></li>`;
   const navCta = document.querySelector('.nav-cta');
   if (navCta) navCta.setAttribute('href', hrefFor('get-started/'));
 }
@@ -127,6 +127,7 @@ function renderMobileNav() {
       ${group.items.map(([path, label]) => `<a href="${hrefFor(path)}"${isActive(path) ? ' class="active"' : ''}>${label}</a>`).join('')}
     </div>
   `).join('') + `
+    <a href="${hrefFor('blog/')}" style="display:block;padding:0.55rem 0;border-bottom:1px solid var(--sand);">Blog</a>
     <a href="${hrefFor('about/')}" style="display:block;padding:0.55rem 0;border-bottom:1px solid var(--sand);">About</a>
     <a href="${hrefFor('get-started/')}" class="nav-mobile-cta">Start Your Journey</a>
   `;
@@ -175,6 +176,19 @@ function renderFooter() {
   const surrGroup    = navItems.find(g => g.label === 'Your Surrogate');
   const familyGroup  = navItems.find(g => g.label === 'Your Family');
 
+  const blogItems = [
+    ['blog/how-much-does-surrogacy-cost-in-california/', 'California Surrogacy Cost'],
+    ['blog/surrogacy-for-gay-couples-step-by-step/', 'Surrogacy for Gay Couples'],
+    ['blog/how-to-choose-a-surrogacy-agency/', 'Choosing an Agency'],
+    ['blog/surrogacy-in-texas-what-intended-parents-need-to-know/', 'Surrogacy in Texas'],
+    ['blog/pre-birth-order-vs-post-birth-order/', 'PBO vs Post-Birth Order'],
+    ['blog/how-long-does-surrogacy-take/', 'How Long Does Surrogacy Take?'],
+    ['blog/surrogacy-for-single-parents/', 'Surrogacy for Single Parents'],
+    ['blog/surrogacy-insurance-guide/', 'Surrogacy Insurance Guide'],
+    ['blog/international-surrogacy-in-the-us/', 'International Surrogacy in the US'],
+    ['blog/surrogacy-agency-red-flags/', 'Surrogacy Agency Red Flags'],
+  ];
+
   const footerTopHtml = `
     <div class="footer-brand-col">
       <div class="footer-brand-name">Surrogacy<span>Expert</span></div>
@@ -193,14 +207,13 @@ function renderFooter() {
 
   const footerBottomHtml = `
     <span>© 2025 Surrogacy.expert — Independent Educational Resource</span>
-    <span><a href="${hrefFor('about/')}">About</a> · <a href="${hrefFor('sitemap/')}">Sitemap</a> · <a href="${hrefFor('sitemap.xml')}">XML Sitemap</a></span>
+    <span><a href="${hrefFor('blog/')}">Blog</a> · <a href="${hrefFor('about/')}">About</a> · <a href="${hrefFor('sitemap/')}">Sitemap</a> · <a href="${hrefFor('sitemap.xml')}">XML Sitemap</a></span>
   `;
   document.querySelectorAll('.footer-bottom').forEach(el => { el.innerHTML = footerBottomHtml; });
 }
 
 // ─── Auto-generate BreadcrumbList + Article JSON-LD schema ───────────────────
 function injectStructuredData() {
-  // BreadcrumbList from .breadcrumb DOM elements
   const breadcrumbEl = document.querySelector('.breadcrumb');
   if (breadcrumbEl) {
     const anchors = Array.from(breadcrumbEl.querySelectorAll('a'));
@@ -227,7 +240,6 @@ function injectStructuredData() {
     }
   }
 
-  // Article schema for inner content pages
   const h1 = document.querySelector('h1');
   const desc = document.querySelector('meta[name="description"]');
   const canonical = document.querySelector('link[rel="canonical"]');
@@ -240,11 +252,7 @@ function injectStructuredData() {
       headline: h1.textContent.trim(),
       description: desc ? desc.getAttribute('content') : '',
       url: canonical.getAttribute('href'),
-      publisher: {
-        '@type': 'Organization',
-        name: 'Surrogacy.expert',
-        url: 'https://surrogacy.expert'
-      },
+      publisher: { '@type': 'Organization', name: 'Surrogacy.expert', url: 'https://surrogacy.expert' },
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonical.getAttribute('href') }
     };
     const ld = document.createElement('script');
