@@ -19,6 +19,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* Belt-and-suspenders: force gap between hero image and trust bar on mobile */
+@media (max-width: 900px) {
+  .hero {
+    padding-bottom: 2rem !important;
+  }
+  .hero-visual {
+    margin-bottom: 0 !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -144,7 +155,7 @@
       </div>
       <div class="why-card fade-up">
         <div class="why-icon">📋</div>
-        <h4>Legal process & contracts</h4>
+        <h4>Legal process &amp; contracts</h4>
         <p>How pre-birth orders work, what the GCA covers, and why independent legal representation matters.</p>
       </div>
     </div>
