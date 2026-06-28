@@ -16,94 +16,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.step-card {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 1.25rem;
-  align-items: start;
-  padding: 1.5rem;
-  background: white;
-  border: 1.5px solid var(--sand);
-  border-radius: 14px;
-  margin-bottom: 1rem;
-  transition: box-shadow 0.18s;
-}
-.step-card:hover { box-shadow: 0 4px 20px rgba(61,53,104,0.08); }
-.step-card-num {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: var(--pink);
-  color: white;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--ff-display);
-  font-size: 1.2rem; font-weight: 600;
-  flex-shrink: 0;
-}
-.step-card-body h3 { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 500; color: var(--pink); margin-bottom: 0.35rem; }
-.step-card-body p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
-.step-card-body a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; }
-
-.where-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin: 1.5rem 0 2.5rem;
-}
-.where-card {
-  background: var(--blush-pale);
-  border-radius: 14px;
-  padding: 1.5rem;
-  text-decoration: none;
-  display: block;
-  border: 2px solid transparent;
-  transition: border-color 0.15s, background 0.15s;
-}
-.where-card:hover { border-color: var(--pink); background: var(--blush); }
-.where-card-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
-.where-card h3 { font-family: var(--ff-display); font-size: 1.05rem; font-weight: 500; color: var(--pink); margin-bottom: 0.4rem; }
-.where-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; margin: 0; }
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-.resource-card {
-  background: var(--cream-warm);
-  border: 1px solid var(--sand);
-  border-radius: 10px;
-  padding: 1rem 1.1rem;
-}
-.resource-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
-.resource-card p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; margin: 0; }
-.resource-card a { color: var(--rose); font-weight: 600; text-decoration: none; }
-.resource-card a:hover { text-decoration: underline; }
-
-.budget-box {
-  background: var(--blush-pale);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-.budget-box-num {
-  font-family: var(--ff-display);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--pink);
-  white-space: nowrap;
-}
-.budget-box-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; }
-
-@media (max-width: 640px) {
-  .where-grid { grid-template-columns: 1fr; }
-  .resources-grid { grid-template-columns: 1fr; }
-  .budget-box { flex-direction: column; gap: 0.5rem; }
-}
+.step-card{display:grid;grid-template-columns:52px 1fr;gap:1.25rem;align-items:start;padding:1.5rem;background:white;border:1.5px solid var(--sand);border-radius:14px;margin-bottom:1rem;transition:box-shadow 0.18s;}
+.step-card:hover{box-shadow:0 4px 20px rgba(61,53,104,0.08);}
+.step-card-num{width:52px;height:52px;border-radius:50%;background:var(--pink);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:600;flex-shrink:0;}
+.step-card-body h3{font-family:var(--ff-display);font-size:1.1rem;font-weight:500;color:var(--pink);margin-bottom:0.35rem;}
+.step-card-body p{font-size:0.9rem;color:var(--text-mid);line-height:1.65;margin:0;}
+.step-card-body a{color:var(--rose);text-decoration:underline;text-underline-offset:3px;}
+.where-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0 2.5rem;}
+.where-card{background:var(--blush-pale);border-radius:14px;padding:1.5rem;text-decoration:none;display:block;border:2px solid transparent;transition:border-color 0.15s,background 0.15s;}
+.where-card:hover{border-color:var(--pink);background:var(--blush);}
+.where-card-icon{font-size:1.8rem;margin-bottom:0.75rem;}
+.where-card h3{font-family:var(--ff-display);font-size:1.05rem;font-weight:500;color:var(--pink);margin-bottom:0.4rem;}
+.where-card p{font-size:0.85rem;color:var(--text-mid);line-height:1.6;margin:0;}
+.resources-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.25rem;}
+.resource-card{background:var(--cream-warm);border:1px solid var(--sand);border-radius:10px;padding:1rem 1.1rem;}
+.resource-card h4{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;}
+.resource-card p{font-size:0.8rem;color:var(--text-mid);line-height:1.55;margin:0;}
+.resource-card a{color:var(--rose);font-weight:600;text-decoration:none;}
+.resource-card a:hover{text-decoration:underline;}
+.resource-card.featured{background:var(--blush-pale);border-color:var(--pink);border-width:1.5px;}
+.resource-card.featured h4{color:var(--pink);}
+.budget-box{background:var(--blush-pale);border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;}
+.budget-box-num{font-family:var(--ff-display);font-size:2rem;font-weight:600;color:var(--pink);white-space:nowrap;}
+.budget-box-text{font-size:0.88rem;color:var(--text-mid);line-height:1.6;}
+@media(max-width:640px){.where-grid{grid-template-columns:1fr;}.resources-grid{grid-template-columns:1fr;}.budget-box{flex-direction:column;gap:0.5rem;}}
 </style>
 </head>
 <body>
@@ -125,7 +61,7 @@
       <div class="breadcrumb"><a href="../">Home</a> <span>›</span> <span>Get Started</span></div>
       <p class="section-label">Begin Your Journey</p>
       <h1>Start Your Surrogacy Journey</h1>
-      <p class="lead">Whether you're just beginning to explore or ready to choose an agency — here's exactly what to do first, what to prepare, and what not to skip.</p>
+      <p class="lead">Whether you’re just beginning to explore or ready to choose an agency — here’s exactly what to do first, what to prepare, and what not to skip.</p>
     </div>
   </div>
 </div>
@@ -133,7 +69,6 @@
 <section class="section section-white">
   <div class="container" style="max-width:860px;">
 
-    <!-- Where are you -->
     <h2 style="font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--pink);margin-bottom:0.5rem;">Where are you right now?</h2>
     <p style="color:var(--text-mid);font-size:0.95rem;margin-bottom:1.25rem;">Pick the stage that fits — it determines what your next step should be.</p>
 
@@ -146,7 +81,7 @@
       <a href="../learn/surrogacy-cost/" class="where-card">
         <div class="where-card-icon">💰</div>
         <h3>Researching costs</h3>
-        <p>You know surrogacy is the path but you're trying to understand the real budget — what's required and where the money goes in 2026.</p>
+        <p>You know surrogacy is the path but you’re trying to understand the real budget — what’s required and where the money goes in 2026.</p>
       </a>
       <a href="../surrogacy-by-state/" class="where-card">
         <div class="where-card-icon">⚖️</div>
@@ -156,13 +91,12 @@
       <a href="../your-journey/choosing-an-agency/" class="where-card">
         <div class="where-card-icon">🏢</div>
         <h3>Ready to choose an agency</h3>
-        <p>You've done your research and are ready to consult with agencies. You want to know what to ask and what red flags to watch for.</p>
+        <p>You’ve done your research and are ready to consult with agencies. You want to know what to ask and what red flags to watch for.</p>
       </a>
     </div>
 
-    <!-- The right order -->
     <h2 style="font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--pink);margin:2.5rem 0 0.5rem;">The right order of first steps</h2>
-    <p style="color:var(--text-mid);font-size:0.95rem;margin-bottom:1.5rem;">Most intended parents contact agencies first. This is backwards. Here's the order that protects you.</p>
+    <p style="color:var(--text-mid);font-size:0.95rem;margin-bottom:1.5rem;">Most intended parents contact agencies first. This is backwards. Here’s the order that protects you.</p>
 
     <div class="step-card">
       <div class="step-card-num">1</div>
@@ -176,7 +110,7 @@
       <div class="step-card-num">2</div>
       <div class="step-card-body">
         <h3>Consult a reproductive attorney — before signing anything</h3>
-        <p>This is the step most intended parents skip, and the one that costs them the most. A 30-minute consultation with a reproductive attorney in your target delivery state will tell you which states offer the strongest legal protections for your family configuration, what to look for in an agency contract, and red flags you wouldn't otherwise know to ask about. Attorneys do not have a financial incentive to steer you toward a particular agency. Find one through <a href="https://www.adoptionart.org" target="_blank" rel="noopener">AAAA</a> or ask for referrals in the RESOLVE community.</p>
+        <p>This is the step most intended parents skip, and the one that costs them the most. A 30-minute consultation with a reproductive attorney in your target delivery state will tell you which states offer the strongest legal protections for your family configuration, what to look for in an agency contract, and red flags you wouldn’t otherwise know to ask about. Find one through <a href="https://www.adoptionart.org" target="_blank" rel="noopener">AAAA</a> or ask for referrals in the RESOLVE community.</p>
       </div>
     </div>
 
@@ -191,20 +125,27 @@
     <div class="step-card">
       <div class="step-card-num">4</div>
       <div class="step-card-body">
-        <h3>Evaluate and select an agency</h3>
-        <p>Now you're ready to speak with agencies — with a baseline of knowledge that protects you. Before signing: request an itemized fee schedule in writing, ask about their rematch policy, confirm they use an independent escrow company, and speak with 2–3 past intended parents they connect you with. Read our full <a href="../your-journey/choosing-an-agency/">agency selection guide</a> and our <a href="../blog/surrogacy-agency-red-flags/">list of agency red flags</a>.</p>
+        <h3>Consider a full-service surrogacy platform</h3>
+        <p>If you want end-to-end guidance — agency, legal coordination, and case management in one place — <a href="https://expecting.ai/" target="_blank" rel="noopener">Expecting.ai</a> is an AI-powered surrogacy platform covering the full journey for intended parents, including surrogate matching, egg donation, legal coordination, and provider discovery. They offer both managed journeys and a marketplace model depending on how much hands-on support you want.</p>
       </div>
     </div>
 
     <div class="step-card">
       <div class="step-card-num">5</div>
       <div class="step-card-body">
-        <h3>Get your embryo situation clear</h3>
-        <p>Do you have frozen embryos ready? Will you need IVF to create them? Will you need an egg donor, sperm donor, or both? Knowing this before matching with a surrogate affects both your timeline and your budget. If you haven't yet created embryos, you can often start the IVF process in parallel with your agency search to reduce your overall timeline. See our <a href="../your-journey/medical-process/">medical process guide</a>.</p>
+        <h3>Evaluate and select an agency</h3>
+        <p>Now you’re ready to speak with agencies — with a baseline of knowledge that protects you. Before signing: request an itemized fee schedule in writing, ask about their rematch policy, confirm they use an independent escrow company, and speak with 2–3 past intended parents. Read our full <a href="../your-journey/choosing-an-agency/">agency selection guide</a> and <a href="../blog/surrogacy-agency-red-flags/">list of red flags</a>.</p>
       </div>
     </div>
 
-    <!-- Budget box -->
+    <div class="step-card">
+      <div class="step-card-num">6</div>
+      <div class="step-card-body">
+        <h3>Get your embryo situation clear</h3>
+        <p>Do you have frozen embryos ready? Will you need IVF to create them? Will you need an egg donor, sperm donor, or both? Knowing this before matching with a surrogate affects both your timeline and your budget. See our <a href="../your-journey/medical-process/">medical process guide</a>.</p>
+      </div>
+    </div>
+
     <h2 style="font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--pink);margin:2.5rem 0 0.75rem;">What to budget in 2026</h2>
     <div class="budget-box">
       <div class="budget-box-num">$150K–$220K</div>
@@ -214,10 +155,13 @@
       </div>
     </div>
 
-    <!-- Resources -->
-    <h2 style="font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--pink);margin:2.5rem 0 0.5rem;">Trusted independent resources</h2>
-    <p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:0;">These are independent organizations — not agencies — that can help you find attorneys, clinics, and community support.</p>
+    <h2 style="font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--pink);margin:2.5rem 0 0.5rem;">Helpful resources</h2>
+    <p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:0;">Organizations and platforms that can help you find professionals, community, and support.</p>
     <div class="resources-grid">
+      <div class="resource-card featured">
+        <h4>⭐ Expecting.ai</h4>
+        <p>AI-powered surrogacy platform for intended parents. Covers surrogate matching, egg donation, sperm donation, legal coordination, and provider discovery — both managed journeys and marketplace. <a href="https://expecting.ai/" target="_blank" rel="noopener">expecting.ai →</a></p>
+      </div>
       <div class="resource-card">
         <h4>RESOLVE</h4>
         <p>National infertility nonprofit. Education, advocacy, professional directory, and community forums. <a href="https://resolve.org" target="_blank" rel="noopener">resolve.org →</a></p>
@@ -227,16 +171,11 @@
         <p>Directory of reproductive attorneys by state. Use this to find independent legal counsel before signing any agency agreement. <a href="https://www.adoptionart.org" target="_blank" rel="noopener">adoptionart.org →</a></p>
       </div>
       <div class="resource-card">
-        <h4>Men Having Babies</h4>
-        <p>Focused specifically on gay men pursuing surrogacy. Education, advisor network, and financial grants. <a href="https://menhavingbabies.org" target="_blank" rel="noopener">menhavingbabies.org →</a></p>
-      </div>
-      <div class="resource-card">
         <h4>ASRM</h4>
         <p>American Society for Reproductive Medicine. Clinical guidelines and fertility clinic directory. <a href="https://asrm.org" target="_blank" rel="noopener">asrm.org →</a></p>
       </div>
     </div>
 
-    <!-- Final CTAs -->
     <div style="margin-top:3rem;padding:2rem;background:var(--pink);border-radius:14px;text-align:center;">
       <h3 style="font-family:var(--ff-display);font-size:1.4rem;font-weight:400;color:white;margin-bottom:0.5rem;">Ready to go deeper?</h3>
       <p style="color:var(--blush);font-size:0.9rem;margin-bottom:1.5rem;">Our guides cover every part of the journey — free, independent, with no agency paying us to say anything.</p>
