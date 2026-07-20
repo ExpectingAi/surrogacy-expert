@@ -200,6 +200,7 @@ function renderFooter() {
     <div class="footer-col footer-col-stacked">
       ${footerSection(familyGroup.label, familyGroup.items)}
       ${footerSection('Site', siteItems, true)}
+      <div class="footer-section footer-section-nested" style="margin-top:2.25rem;"><h4>For Surrogates</h4><ul><li><a href="https://surrogate.expert/" rel="noopener">Surrogate.Expert</a></li><li><a href="https://surrogate.expert/surrogate-requirements/" rel="noopener">Surrogate Requirements</a></li><li><a href="https://surrogate.expert/surrogate-compensation/" rel="noopener">Surrogate Compensation</a></li><li><a href="https://surrogate.expert/becoming-a-surrogate/" rel="noopener">Becoming a Surrogate</a></li></ul></div>
     </div>
   `;
   document.querySelectorAll('.site-footer .footer-top').forEach(el => { el.innerHTML = footerTopHtml; });
@@ -207,7 +208,7 @@ function renderFooter() {
 
   const footerBottomHtml = `
     <span>© 2025 Surrogacy.expert — Independent Educational Resource</span>
-    <span><a href="${hrefFor('blog/')}">Blog</a> · <a href="${hrefFor('about/')}">About</a> · <a href="${hrefFor('sitemap/')}">Sitemap</a> · <a href="${hrefFor('sitemap.xml')}">XML Sitemap</a></span>
+    <span><a href="${hrefFor('blog/')}">Blog</a> · <a href="${hrefFor('about/')}">About</a> · <a href="${hrefFor('sitemap/')}">Sitemap</a> · <a href="${hrefFor('sitemap.xml')}">XML Sitemap</a> · <a href="https://surrogate.expert/" rel="noopener">For Surrogates</a></span>
   `;
   document.querySelectorAll('.footer-bottom').forEach(el => { el.innerHTML = footerBottomHtml; });
 }
