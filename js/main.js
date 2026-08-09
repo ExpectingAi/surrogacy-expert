@@ -18,7 +18,7 @@ const navItems = [
     ['your-journey/after-the-birth/','After the Birth']
   ]},
   { label:'Your Surrogate', dropdownLabel:'Finding & Working Together', items:[
-    ['your-surrogate/finding-a-surrogate/','Finding a Surrogate'],
+    ['your-surrogate/how-to-find-a-surrogate/','How to Find a Surrogate'],
     ['your-surrogate/surrogate-screening/','Surrogate Screening'],
     ['your-surrogate/surrogate-compensation/','Surrogate Compensation'],
     ['your-surrogate/your-relationship/','Your Relationship'],
@@ -32,7 +32,7 @@ const navItems = [
     ['your-family/talking-to-your-child/','Talking to Your Child']
   ]}
 ];
-const siteItems = [['about/','About'],['blog/','Blog'],['get-started/','Get Started']];
+const siteItems = [['about/','About'],['blog/','Blog'],['get-started/','Planning Guide'],['privacy-policy/','Privacy'],['terms/','Terms']];
 
 function getRelativePrefix(){
   let basePath='/';
@@ -77,11 +77,11 @@ function renderDesktopNav(){
   const navLinks=document.querySelector('.nav-links');
   if(!navLinks) return;
   navLinks.innerHTML=navItems.map(group=>`<li><button aria-haspopup="true" aria-expanded="false">${group.label} ${chevronSvg}</button><div class="nav-dropdown" role="menu"><div class="nav-dropdown-label">${group.dropdownLabel}</div>${group.items.map(([path,label])=>`<a href="${hrefFor(path)}" role="menuitem"${isActive(path)?' class="active"':''}>${label}</a>`).join('')}</div></li>`).join('')+`<li><a href="${hrefFor('blog/')}"${isActive('blog/')?' class="active"':''}>Blog</a></li><li><a href="${hrefFor('about/')}"${isActive('about/')?' class="active"':''}>About</a></li>`;
-  const cta=document.querySelector('.nav-cta'); if(cta) cta.setAttribute('href',hrefFor('get-started/'));
+  const cta=document.querySelector('.nav-cta'); if(cta){cta.setAttribute('href',hrefFor('get-started/'));cta.textContent='Planning Guide';}
 }
 function renderMobileNav(){
   const mobile=document.getElementById('nav-mobile'); if(!mobile) return;
-  mobile.innerHTML=navItems.map(group=>`<div class="nav-mobile-section"><div class="nav-mobile-label">${group.label}</div>${group.items.map(([path,label])=>`<a href="${hrefFor(path)}"${isActive(path)?' class="active"':''}>${label}</a>`).join('')}</div>`).join('')+`<a href="${hrefFor('blog/')}" style="display:block;padding:.55rem 0;border-bottom:1px solid var(--sand)">Blog</a><a href="${hrefFor('about/')}" style="display:block;padding:.55rem 0;border-bottom:1px solid var(--sand)">About</a><a href="${hrefFor('get-started/')}" class="nav-mobile-cta">Start Your Journey</a>`;
+  mobile.innerHTML=navItems.map(group=>`<div class="nav-mobile-section"><div class="nav-mobile-label">${group.label}</div>${group.items.map(([path,label])=>`<a href="${hrefFor(path)}"${isActive(path)?' class="active"':''}>${label}</a>`).join('')}</div>`).join('')+`<a href="${hrefFor('blog/')}" style="display:block;padding:.55rem 0;border-bottom:1px solid var(--sand)">Blog</a><a href="${hrefFor('about/')}" style="display:block;padding:.55rem 0;border-bottom:1px solid var(--sand)">About</a><a href="${hrefFor('get-started/')}" class="nav-mobile-cta">Planning Guide</a>`;
 }
 function footerList(items){return `<ul>${items.map(([path,label])=>`<li><a href="${hrefFor(path)}">${label}</a></li>`).join('')}</ul>`;}
 function footerSection(title,items,nested=false){return `<div class="footer-section${nested?' footer-section-nested':''}"${nested?' style="margin-top:2.25rem"':''}><h4>${title}</h4>${footerList(items)}</div>`;}
@@ -99,7 +99,7 @@ function renderFooter(){
   const learn=navItems.find(g=>g.label==='Learn'), journey=navItems.find(g=>g.label==='Your Journey'), surrogate=navItems.find(g=>g.label==='Your Surrogate'), family=navItems.find(g=>g.label==='Your Family');
   const html=`<div class="footer-brand-col"><div class="footer-brand-name">Surrogacy<span>Expert</span></div><p class="footer-tagline">Practical educational guidance for intended parents pursuing gestational surrogacy in the United States.</p></div><div class="footer-col">${footerSection(learn.label,learn.items)}</div><div class="footer-col">${footerSection(journey.label,journey.items)}</div><div class="footer-col">${footerSection(surrogate.label,surrogate.items)}</div><div class="footer-col footer-col-stacked">${footerSection(family.label,family.items)}${footerSection('Site',siteItems,true)}<div class="footer-section footer-section-nested" style="margin-top:2.25rem"><h4>For Surrogates</h4><ul><li><a href="https://surrogate.expert/" rel="noopener">Surrogate.Expert</a></li></ul></div></div>`;
   document.querySelectorAll('.site-footer .footer-top').forEach(el=>el.innerHTML=html);
-  document.querySelectorAll('.footer-bottom').forEach(el=>el.innerHTML=`<span>© 2026 Surrogacy Expert</span><span><a href="${hrefFor('blog/')}">Blog</a> · <a href="${hrefFor('about/')}">About</a> · <a href="${hrefFor('sitemap/')}">Sitemap</a></span>`);
+  document.querySelectorAll('.footer-bottom').forEach(el=>el.innerHTML=`<span>© 2026 Surrogacy Expert</span><span><a href="${hrefFor('blog/')}">Blog</a> · <a href="${hrefFor('about/')}">About</a> · <a href="${hrefFor('privacy-policy/')}">Privacy</a> · <a href="${hrefFor('terms/')}">Terms</a> · <a href="${hrefFor('sitemap/')}">Sitemap</a></span>`);
   applyFooterResponsiveLayout();
 }
 function injectStructuredData(){
