@@ -1,0 +1,306 @@
+# SEO Audit Report
+
+- HTML pages scanned: **104**
+- Sitemap URLs: **86**
+- Critical: **0**
+- High: **6**
+- Medium: **99**
+- Low: **180**
+
+## CRITICAL
+
+None.
+
+## HIGH
+
+- `https://surrogacy.expert/blog/how-long-does-surrogacy-take/` — Canonical mismatch: https://surrogacy.expert/learn/surrogacy-timeline/
+- `https://surrogacy.expert/blog/how-to-choose-a-surrogacy-agency/` — Canonical mismatch: https://surrogacy.expert/your-journey/choosing-an-agency/
+- `https://surrogacy.expert/learn/what-is-surrogacy-for-parents/` — Canonical mismatch: https://surrogacy.expert/learn/what-is-surrogacy/
+- `https://surrogacy.expert/your-family/international-intended-parents/` — Canonical mismatch: https://surrogacy.expert/your-family/international-parents/
+- `https://surrogacy.expert/your-journey/the-matching-process/` — Canonical mismatch: https://surrogacy.expert/your-journey/matching-process/
+- `https://surrogacy.expert/your-surrogate/finding-a-surrogate/` — Canonical mismatch: https://surrogacy.expert/your-surrogate/how-to-find-a-surrogate/
+
+## MEDIUM
+
+- `https://surrogacy.expert/2026-us-surrogacy-cost-benchmark/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/available-surrogates/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/blog/surrogacy-insurance-guide/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/privacy-policy/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/privacy-policy/` — Missing og:title
+- `https://surrogacy.expert/privacy-policy/` — Missing og:url
+- `https://surrogacy.expert/privacy-policy/` — No static internal links found to this page (possible orphan; JS nav not counted)
+- `https://surrogacy.expert/sitemap/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/sitemap/` — Missing og:title
+- `https://surrogacy.expert/sitemap/` — Missing og:url
+- `https://surrogacy.expert/sitemap/` — No static internal links found to this page (possible orphan; JS nav not counted)
+- `https://surrogacy.expert/surrogacy-agency-fees-2026/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/surrogacy-by-state/alabama/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/alabama/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/arizona/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/arizona/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/arkansas/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/arkansas/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/colorado/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/colorado/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/colorado/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/connecticut/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/connecticut/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/connecticut/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/delaware/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/delaware/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/delaware/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/florida/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/georgia/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/georgia/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/hawaii/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/hawaii/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/illinois/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/indiana/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/indiana/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/kansas/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/kansas/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/louisiana/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/louisiana/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/maine/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/maine/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/maine/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/maryland/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/maryland/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/maryland/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/massachusetts/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/massachusetts/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/massachusetts/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/minnesota/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/minnesota/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/nebraska/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/nebraska/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/nevada/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/new-hampshire/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/new-hampshire/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/new-hampshire/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/new-jersey/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/new-jersey/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/new-jersey/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/north-carolina/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/north-carolina/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/oklahoma/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/oklahoma/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/oregon/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/oregon/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/oregon/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/rhode-island/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/rhode-island/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/rhode-island/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/texas/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/utah/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/utah/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/vermont/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/vermont/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/vermont/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/virginia/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/virginia/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/virginia/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/washington-dc/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/washington-dc/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-by-state/washington/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/surrogacy-by-state/wisconsin/` — Missing og:title
+- `https://surrogacy.expert/surrogacy-by-state/wisconsin/` — Missing og:url
+- `https://surrogacy.expert/surrogacy-cost-by-state-2026/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/terms/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/terms/` — Missing og:title
+- `https://surrogacy.expert/terms/` — Missing og:url
+- `https://surrogacy.expert/terms/` — No static internal links found to this page (possible orphan; JS nav not counted)
+- `https://surrogacy.expert/your-journey/after-the-birth/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/your-journey/can-you-work-with-multiple-surrogacy-agencies/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/your-journey/choosing-an-agency/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/your-journey/find-a-surrogate-first-or-choose-an-agency-first/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/your-journey/matching-process/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/your-journey/pregnancy-and-birth/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/your-journey/starting-out/` — Article/content page has no static JSON-LD
+- `https://surrogacy.expert/your-journey/surrogacy-agency-waiting-lists/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/your-journey/what-if-your-agency-has-no-available-surrogates/` — Indexable HTML page missing from sitemap
+- `https://surrogacy.expert/your-journey/what-if-your-agency-has-no-available-surrogates/` — No static internal links found to this page (possible orphan; JS nav not counted)
+- `https://surrogacy.expert/your-surrogate/how-long-does-it-take-to-find-a-surrogate/` — Indexable HTML page missing from sitemap
+
+## LOW
+
+- `https://surrogacy.expert/2026-us-surrogacy-cost-benchmark/` — Missing og:image
+- `https://surrogacy.expert/2026-us-surrogacy-cost-benchmark/` — Missing twitter:card
+- `https://surrogacy.expert/about/` — Missing twitter:card
+- `https://surrogacy.expert/available-surrogates/` — Missing og:image
+- `https://surrogacy.expert/available-surrogates/` — Missing twitter:card
+- `https://surrogacy.expert/blog/` — Missing twitter:card
+- `https://surrogacy.expert/blog/how-much-does-surrogacy-cost-in-california/` — Missing twitter:card
+- `https://surrogacy.expert/blog/international-surrogacy-in-the-us/` — Missing og:image
+- `https://surrogacy.expert/blog/international-surrogacy-in-the-us/` — Missing twitter:card
+- `https://surrogacy.expert/blog/pre-birth-order-vs-post-birth-order/` — Missing twitter:card
+- `https://surrogacy.expert/blog/surrogacy-agency-red-flags/` — Missing twitter:card
+- `https://surrogacy.expert/blog/surrogacy-for-gay-couples-step-by-step/` — Missing og:image
+- `https://surrogacy.expert/blog/surrogacy-for-gay-couples-step-by-step/` — Missing twitter:card
+- `https://surrogacy.expert/blog/surrogacy-for-single-parents/` — Missing og:image
+- `https://surrogacy.expert/blog/surrogacy-for-single-parents/` — Missing twitter:card
+- `https://surrogacy.expert/blog/surrogacy-in-texas-what-intended-parents-need-to-know/` — Missing twitter:card
+- `https://surrogacy.expert/blog/surrogacy-insurance-guide/` — Missing twitter:card
+- `https://surrogacy.expert/get-started/` — Missing og:image
+- `https://surrogacy.expert/get-started/` — Missing twitter:card
+- `https://surrogacy.expert/learn/faq-glossary/` — Missing og:image
+- `https://surrogacy.expert/learn/faq-glossary/` — Missing twitter:card
+- `https://surrogacy.expert/learn/surrogacy-cost/` — Missing og:image
+- `https://surrogacy.expert/learn/surrogacy-cost/` — Missing twitter:card
+- `https://surrogacy.expert/learn/surrogacy-timeline/` — Missing og:image
+- `https://surrogacy.expert/learn/surrogacy-timeline/` — Missing twitter:card
+- `https://surrogacy.expert/learn/types-of-surrogacy/` — Missing og:image
+- `https://surrogacy.expert/learn/types-of-surrogacy/` — Missing twitter:card
+- `https://surrogacy.expert/learn/what-is-surrogacy/` — Missing og:image
+- `https://surrogacy.expert/learn/what-is-surrogacy/` — Missing twitter:card
+- `https://surrogacy.expert/privacy-policy/` — Missing og:image
+- `https://surrogacy.expert/privacy-policy/` — Missing twitter:card
+- `https://surrogacy.expert/sitemap/` — Missing og:image
+- `https://surrogacy.expert/sitemap/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-agency-fees-2026/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-agency-fees-2026/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/alabama/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/alabama/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/alaska/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/alaska/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/arizona/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/arizona/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/arkansas/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/arkansas/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/california/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/california/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/colorado/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/colorado/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/connecticut/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/connecticut/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/delaware/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/delaware/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/florida/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/florida/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/georgia/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/georgia/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/hawaii/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/hawaii/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/idaho/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/idaho/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/illinois/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/illinois/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/indiana/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/indiana/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/iowa/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/iowa/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/kansas/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/kansas/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/kentucky/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/kentucky/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/louisiana/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/louisiana/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/maine/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/maine/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/maryland/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/maryland/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/massachusetts/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/massachusetts/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/michigan/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/michigan/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/minnesota/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/minnesota/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/mississippi/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/mississippi/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/missouri/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/missouri/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/montana/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/montana/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/nebraska/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/nebraska/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/nevada/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/nevada/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/new-hampshire/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/new-hampshire/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/new-jersey/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/new-jersey/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/new-mexico/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/new-mexico/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/new-york/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/new-york/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/north-carolina/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/north-carolina/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/north-dakota/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/ohio/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/ohio/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/oklahoma/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/oklahoma/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/oregon/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/oregon/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/pennsylvania/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/pennsylvania/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/rhode-island/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/rhode-island/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/south-carolina/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/south-dakota/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/south-dakota/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/tennessee/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/texas/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/texas/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/utah/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/utah/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/vermont/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/vermont/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/virginia/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/virginia/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/washington-dc/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/washington-dc/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/washington/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/washington/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/west-virginia/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/west-virginia/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/wisconsin/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/wisconsin/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-by-state/wyoming/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-by-state/wyoming/` — Missing twitter:card
+- `https://surrogacy.expert/surrogacy-cost-by-state-2026/` — Missing og:image
+- `https://surrogacy.expert/surrogacy-cost-by-state-2026/` — Missing twitter:card
+- `https://surrogacy.expert/terms/` — Missing og:image
+- `https://surrogacy.expert/terms/` — Missing twitter:card
+- `https://surrogacy.expert/your-family/international-parents/` — Missing og:image
+- `https://surrogacy.expert/your-family/international-parents/` — Missing twitter:card
+- `https://surrogacy.expert/your-family/lgbtq-surrogacy/` — Missing og:image
+- `https://surrogacy.expert/your-family/lgbtq-surrogacy/` — Missing twitter:card
+- `https://surrogacy.expert/your-family/same-sex-male-couples/` — Missing og:image
+- `https://surrogacy.expert/your-family/same-sex-male-couples/` — Missing twitter:card
+- `https://surrogacy.expert/your-family/single-parent-surrogacy/` — Missing og:image
+- `https://surrogacy.expert/your-family/single-parent-surrogacy/` — Missing twitter:card
+- `https://surrogacy.expert/your-family/talking-to-your-child/` — Missing og:image
+- `https://surrogacy.expert/your-family/talking-to-your-child/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/after-the-birth/` — Missing og:image
+- `https://surrogacy.expert/your-journey/after-the-birth/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/can-you-work-with-multiple-surrogacy-agencies/` — Missing og:image
+- `https://surrogacy.expert/your-journey/can-you-work-with-multiple-surrogacy-agencies/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/choosing-an-agency/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/find-a-surrogate-first-or-choose-an-agency-first/` — Missing og:image
+- `https://surrogacy.expert/your-journey/find-a-surrogate-first-or-choose-an-agency-first/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/legal-process/` — Missing og:image
+- `https://surrogacy.expert/your-journey/legal-process/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/matching-process/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/medical-process/` — Missing og:image
+- `https://surrogacy.expert/your-journey/medical-process/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/pregnancy-and-birth/` — Missing og:image
+- `https://surrogacy.expert/your-journey/pregnancy-and-birth/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/starting-out/` — Missing og:image
+- `https://surrogacy.expert/your-journey/starting-out/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/surrogacy-agency-waiting-lists/` — Missing og:image
+- `https://surrogacy.expert/your-journey/surrogacy-agency-waiting-lists/` — Missing twitter:card
+- `https://surrogacy.expert/your-journey/what-if-your-agency-has-no-available-surrogates/` — Missing og:image
+- `https://surrogacy.expert/your-journey/what-if-your-agency-has-no-available-surrogates/` — Missing twitter:card
+- `https://surrogacy.expert/your-surrogate/how-long-does-it-take-to-find-a-surrogate/` — Missing og:image
+- `https://surrogacy.expert/your-surrogate/how-long-does-it-take-to-find-a-surrogate/` — Missing twitter:card
+- `https://surrogacy.expert/your-surrogate/how-to-find-a-surrogate/` — Missing og:image
+- `https://surrogacy.expert/your-surrogate/how-to-find-a-surrogate/` — Missing twitter:card
+- `https://surrogacy.expert/your-surrogate/surrogate-compensation/` — Missing og:image
+- `https://surrogacy.expert/your-surrogate/surrogate-compensation/` — Missing twitter:card
+- `https://surrogacy.expert/your-surrogate/surrogate-requirements/` — Missing twitter:card
+- `https://surrogacy.expert/your-surrogate/surrogate-screening/` — Missing twitter:card
+- `https://surrogacy.expert/your-surrogate/your-relationship/` — Missing og:image
+- `https://surrogacy.expert/your-surrogate/your-relationship/` — Missing twitter:card
