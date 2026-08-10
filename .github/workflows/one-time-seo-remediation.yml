@@ -1,0 +1,96 @@
+name: One-time SEO remediation
+
+on:
+  push:
+    branches:
+      - seo/full-audit-1
+    paths:
+      - .github/workflows/one-time-seo-remediation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo/full-audit-1
+      - name: Fix indexable-page metadata and sitemap coverage
+        shell: python
+        run: |
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import re, xml.etree.ElementTree as ET
+
+          ROOT=Path('.')
+          BASE='https://surrogacy.expert/'
+          TODAY='2026-08-10'
+
+          def url_for(path):
+              rel=str(path.parent).replace('\\','/')
+              return BASE if rel=='.' else BASE+rel.strip('/')+'/'
+
+          changed=[]
+          indexable=[]
+          for path in ROOT.rglob('index.html'):
+              text=path.read_text(encoding='utf-8',errors='ignore')
+              low=text.lower()
+              redirect=('http-equiv="refresh"' in low or "http-equiv='refresh'" in low or 'location.replace(' in low)
+              robots=re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)',text,re.I)
+              noindex=bool(robots and 'noindex' in robots.group(1).lower())
+              if redirect or noindex:
+                  continue
+              url=url_for(path)
+              indexable.append(url)
+              titlem=re.search(r'<title>(.*?)</title>',text,re.I|re.S)
+              title=re.sub(r'\s+',' ',titlem.group(1)).strip() if titlem else 'Surrogacy Expert'
+              canonm=re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)',text,re.I)
+              canonical=canonm.group(1) if canonm else url
+              insert=[]
+              if not re.search(r'<meta[^>]+property=["\']og:title["\']',text,re.I):
+                  insert.append(f'<meta property="og:title" content="{title.replace(chr(34), "&quot;")}">')
+              if not re.search(r'<meta[^>]+property=["\']og:url["\']',text,re.I):
+                  insert.append(f'<meta property="og:url" content="{canonical}">')
+              if not re.search(r'<meta[^>]+property=["\']og:image["\']',text,re.I):
+                  insert.append('<meta property="og:image" content="https://surrogacy.expert/og-image.png">')
+              if not re.search(r'<meta[^>]+name=["\']twitter:card["\']',text,re.I):
+                  insert.append('<meta name="twitter:card" content="summary_large_image">')
+              if '<article' in low and 'application/ld+json' not in low:
+                  headline=re.sub(r'\s+',' ',re.sub(r'<[^>]+>','',title.split('|')[0])).strip()
+                  schema='{"@context":"https://schema.org","@type":"Article","headline":'+repr(headline).replace("'",'"')+',"mainEntityOfPage":{"@type":"WebPage","@id":"'+canonical+'"},"publisher":{"@type":"Organization","name":"Surrogacy Expert","url":"https://surrogacy.expert/"},"inLanguage":"en-US"}'
+                  insert.append('<script type="application/ld+json">'+schema+'</script>')
+              if insert:
+                  text=text.replace('</head>','\n'.join(insert)+'\n</head>',1)
+                  path.write_text(text,encoding='utf-8')
+                  changed.append(str(path))
+
+          sm=ROOT/'sitemap.xml'
+          tree=ET.parse(sm)
+          root=tree.getroot()
+          ns='http://www.sitemaps.org/schemas/sitemap/0.9'
+          ET.register_namespace('',ns)
+          existing={e.text.strip() for e in root.findall('{%s}url/{%s}loc'%(ns,ns)) if e.text}
+          added=[]
+          for url in sorted(indexable):
+              if url in existing: continue
+              u=ET.SubElement(root,'{%s}url'%ns)
+              ET.SubElement(u,'{%s}loc'%ns).text=url
+              ET.SubElement(u,'{%s}lastmod'%ns).text=TODAY
+              ET.SubElement(u,'{%s}priority'%ns).text='0.7'
+              ET.SubElement(u,'{%s}changefreq'%ns).text='monthly'
+              added.append(url)
+          tree.write(sm,encoding='utf-8',xml_declaration=True)
+          print('HTML changed:',len(changed))
+          print('Sitemap URLs added:',len(added))
+          for u in added: print(' +',u)
+      - name: Commit remediation
+        shell: bash
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' sitemap.xml
+          git commit -m "SEO: improve metadata, structured data, and sitemap coverage"
+          git push origin HEAD:seo/full-audit-1
