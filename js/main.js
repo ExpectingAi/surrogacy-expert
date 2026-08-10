@@ -105,10 +105,18 @@ function renderFooter(){
 function injectStructuredData(){
   const breadcrumb=document.querySelector('.breadcrumb');
   if(breadcrumb&&!document.querySelector('script[data-auto-breadcrumb]')){
-    const anchors=Array.from(breadcrumb.querySelectorAll('a'));
-    const current=breadcrumb.querySelector('span:last-child');
-    const items=anchors.map((a,i)=>({'@type':'ListItem',position:i+1,name:a.textContent.trim(),item:a.href}));
-    if(current&&current.textContent.trim()&&current.textContent.trim()!=='›') items.push({'@type':'ListItem',position:items.length+1,name:current.textContent.trim(),item:window.location.href.split('?')[0].replace(/\/$/,'')+'/'});
+    const names=breadcrumb.textContent.split(/[›/]/).map(s=>s.trim()).filter(Boolean);
+    const canonical=document.querySelector('link[rel="canonical"]')?.href||window.location.href.split('?')[0];
+    const pathParts=new URL(canonical,window.location.href).pathname.replace(/index\.html$/,'').split('/').filter(Boolean);
+    const homeAnchor=breadcrumb.querySelector('a');
+    const homeUrl=homeAnchor?.href||`${window.location.origin}/`;
+    const items=names.map((name,i)=>{
+      let item;
+      if(i===0) item=homeUrl;
+      else if(i===names.length-1) item=canonical.replace(/\/$/,'')+'/';
+      else item=`${window.location.origin}/${pathParts.slice(0,Math.min(i,pathParts.length)).join('/')}/`;
+      return {'@type':'ListItem',position:i+1,name,item};
+    });
     if(items.length>1){const ld=document.createElement('script');ld.type='application/ld+json';ld.dataset.autoBreadcrumb='1';ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:items});document.head.appendChild(ld);}
   }
 }
