@@ -4,6 +4,7 @@ const navItems = [
     ['learn/what-is-surrogacy/','What Is Gestational Surrogacy?'],
     ['learn/types-of-surrogacy/','Types of Surrogacy'],
     ['learn/surrogacy-cost/','Cost & Budget Guide'],
+    ['2026-us-surrogacy-cost-benchmark/','2026 U.S. Cost Guide'],
     ['learn/surrogacy-timeline/','Timeline Overview'],
     ['learn/faq-glossary/','FAQ & Glossary'],
     ['surrogacy-by-state/','Surrogacy by State']
@@ -11,6 +12,7 @@ const navItems = [
   { label:'Your Journey', dropdownLabel:'Step by Step', items:[
     ['your-journey/starting-out/','Starting Out'],
     ['your-journey/choosing-an-agency/','Choosing an Agency'],
+    ['surrogacy-agency-fees-2026/','Agency Fees'],
     ['your-journey/matching-process/','The Matching Process'],
     ['your-journey/legal-process/','Legal Process & Contracts'],
     ['your-journey/medical-process/','Medical Process & IVF'],
@@ -19,6 +21,7 @@ const navItems = [
   ]},
   { label:'Your Surrogate', dropdownLabel:'Finding & Working Together', items:[
     ['your-surrogate/how-to-find-a-surrogate/','How to Find a Surrogate'],
+    ['available-surrogates/','Available Surrogates'],
     ['your-surrogate/surrogate-screening/','Surrogate Screening'],
     ['your-surrogate/surrogate-compensation/','Surrogate Compensation'],
     ['your-surrogate/your-relationship/','Your Relationship'],
