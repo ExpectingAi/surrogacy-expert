@@ -32,7 +32,7 @@ const navItems = [
     ['your-family/talking-to-your-child/','Talking to Your Child']
   ]}
 ];
-const siteItems = [['about/','About'],['blog/','Blog'],['get-started/','Planning Guide'],['privacy-policy/','Privacy'],['terms/','Terms']];
+const siteItems = [['available-surrogates/','Available Surrogates'],['surrogacy-agency-fees-2026/','Agency Fees'],['2026-us-surrogacy-cost-benchmark/','2026 Cost Guide'],['surrogacy-cost-by-state-2026/','Cost by State'],['your-journey/find-a-surrogate-first-or-choose-an-agency-first/','Surrogate First or Agency First?'],['about/','About'],['blog/','Blog'],['get-started/','Planning Guide'],['privacy-policy/','Privacy'],['terms/','Terms']];
 
 function getRelativePrefix(){
   let basePath='/';
